@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Workers")
-public class Worker {
+public class WorkerEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,11 +17,11 @@ public class Worker {
 	
 	private String surname;
 	
-	@ManyToMany(targetEntity = Project.class)
-	private Set<Project> projects;
+	@ManyToMany(targetEntity = ProjectEntity.class)
+	private Set<ProjectEntity> projects;
 	
-	@ManyToMany(targetEntity = Task.class)
-	private Set<Task> tasks;
+	@ManyToMany(targetEntity = TaskEntity.class)
+	private Set<TaskEntity> tasks;
 
 	@ElementCollection
 	private List<String> telephoneNumbers;
@@ -50,19 +50,19 @@ public class Worker {
 		this.surname = surname;
 	}
 
-	public Set<Project> getProjects() {
+	public Set<ProjectEntity> getProjects() {
 		return projects;
 	}
 
-	public void setProjects(Set<Project> projects) {
+	public void setProjects(Set<ProjectEntity> projects) {
 		this.projects = projects;
 	}
 
-	public Set<Task> getTasks() {
+	public Set<TaskEntity> getTasks() {
 		return tasks;
 	}
 
-	public void setTasks(Set<Task> tasks) {
+	public void setTasks(Set<TaskEntity> tasks) {
 		this.tasks = tasks;
 	}
 

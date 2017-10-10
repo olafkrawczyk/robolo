@@ -2,8 +2,8 @@ package com.ksm.robolo.roboloapp.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.ksm.robolo.roboloapp.domain.Task;
+import com.ksm.robolo.roboloapp.domain.TaskEntity;
 
-public interface TaskRepository extends CrudRepository<Task, Long> {
+public interface TaskRepository extends CrudRepository<TaskEntity, Long> {
 
 }

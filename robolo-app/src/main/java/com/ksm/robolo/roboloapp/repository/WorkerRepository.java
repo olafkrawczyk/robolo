@@ -2,8 +2,8 @@ package com.ksm.robolo.roboloapp.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.ksm.robolo.roboloapp.domain.Worker;
+import com.ksm.robolo.roboloapp.domain.WorkerEntity;
 
-public interface WorkerRepository extends CrudRepository<Worker, Long> {
+public interface WorkerRepository extends CrudRepository<WorkerEntity, Long> {
 
 }

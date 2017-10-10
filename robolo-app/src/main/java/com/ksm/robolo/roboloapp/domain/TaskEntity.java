@@ -20,7 +20,7 @@ import com.ksm.robolo.roboloapp.enums.TaskStatus;
 
 @Entity
 @Table(name = "Tasks")
-public class Task {
+public class TaskEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,11 +30,11 @@ public class Task {
 	
 	private Period estimatedTaskDuration;
 	
-	@ManyToMany(targetEntity = Worker.class)
-	private Set<Worker> workersSet;
+	@ManyToMany(targetEntity = WorkerEntity.class)
+	private Set<WorkerEntity> workersSet;
 	
 	@ManyToOne
-	private Project project;
+	private ProjectEntity project;
 	
 	@Temporal(TemporalType.DATE)
 	private Date creationDate;
@@ -44,8 +44,8 @@ public class Task {
 	
 	private TaskStatus status;
 	
-	@OneToMany(targetEntity = TaskItem.class)
-	private List<TaskItem> taskItems;
+	@OneToMany(targetEntity = TaskItemEntity.class)
+	private List<TaskItemEntity> taskItems;
 
 	public Long getId() {
 		return id;
@@ -71,19 +71,19 @@ public class Task {
 		this.estimatedTaskDuration = estimatedTaskDuration;
 	}
 
-	public Set<Worker> getWorkersSet() {
+	public Set<WorkerEntity> getWorkersSet() {
 		return workersSet;
 	}
 
-	public void setWorkersSet(Set<Worker> workersSet) {
+	public void setWorkersSet(Set<WorkerEntity> workersSet) {
 		this.workersSet = workersSet;
 	}
 
-	public Project getProject() {
+	public ProjectEntity getProject() {
 		return project;
 	}
 
-	public void setProject(Project project) {
+	public void setProject(ProjectEntity project) {
 		this.project = project;
 	}
 
@@ -111,11 +111,11 @@ public class Task {
 		this.status = status;
 	}
 
-	public List<TaskItem> getTaskItems() {
+	public List<TaskItemEntity> getTaskItems() {
 		return taskItems;
 	}
 
-	public void setTaskItems(List<TaskItem> taskItems) {
+	public void setTaskItems(List<TaskItemEntity> taskItems) {
 		this.taskItems = taskItems;
 	}
 }

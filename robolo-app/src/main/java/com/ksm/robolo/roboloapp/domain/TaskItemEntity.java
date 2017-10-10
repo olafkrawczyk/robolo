@@ -9,14 +9,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Tasks_items")
-public class TaskItem {
+public class TaskItemEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@ManyToOne
-	private Task task;
+	private TaskEntity task;
 	
 	private Integer quantity;
 	
@@ -32,11 +32,11 @@ public class TaskItem {
 		this.id = id;
 	}
 
-	public Task getTask() {
+	public TaskEntity getTask() {
 		return task;
 	}
 
-	public void setTask(Task task) {
+	public void setTask(TaskEntity task) {
 		this.task = task;
 	}
 

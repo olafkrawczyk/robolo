@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Projects")
-public class Project {
+public class ProjectEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,13 +28,13 @@ public class Project {
 	private Date startDate;
 	
 	@OneToOne
-	private Address address;
+	private AddressEntity address;
 	
 	@ManyToOne
-	private Client client;
+	private ClientEntity client;
 	
-	@ManyToMany(targetEntity = Worker.class)
-	private Set<Worker> workers;
+	@ManyToMany(targetEntity = WorkerEntity.class)
+	private Set<WorkerEntity> workers;
 
 	public Long getId() {
 		return id;
@@ -60,27 +60,27 @@ public class Project {
 		this.startDate = startDate;
 	}
 
-	public Address getAddress() {
+	public AddressEntity getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(AddressEntity address) {
 		this.address = address;
 	}
 
-	public Client getClient() {
+	public ClientEntity getClient() {
 		return client;
 	}
 
-	public void setClient(Client client) {
+	public void setClient(ClientEntity client) {
 		this.client = client;
 	}
 
-	public Set<Worker> getWorkers() {
+	public Set<WorkerEntity> getWorkers() {
 		return workers;
 	}
 
-	public void setWorkers(Set<Worker> workers) {
+	public void setWorkers(Set<WorkerEntity> workers) {
 		this.workers = workers;
 	}
 }

@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Clients")
-public class Client {
+public class ClientEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,8 +23,8 @@ public class Client {
 	
 	private String emailAddress;
 	
-	@OneToMany(targetEntity = Project.class)
-	private Set<Project> projects;
+	@OneToMany(targetEntity = ProjectEntity.class)
+	private Set<ProjectEntity> projects;
 	
 	public Long getId() {
 		return id;
