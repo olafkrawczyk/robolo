@@ -28,7 +28,7 @@ public class TaskEntity {
 	
 	private String description;
 	
-	private Period estimatedTaskDuration;
+	private int estimatedTaskDuration;
 	
 	@ManyToMany(targetEntity = WorkerEntity.class)
 	private Set<WorkerEntity> workersSet;
@@ -63,11 +63,11 @@ public class TaskEntity {
 		this.description = description;
 	}
 
-	public Period getEstimatedTaskDuration() {
+	public int getEstimatedTaskDuration() {
 		return estimatedTaskDuration;
 	}
 
-	public void setEstimatedTaskDuration(Period estimatedTaskDuration) {
+	public void setEstimatedTaskDuration(int estimatedTaskDuration) {
 		this.estimatedTaskDuration = estimatedTaskDuration;
 	}
 
